@@ -42,13 +42,22 @@ body {
 }
 
 .bag-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  max-width: 300px;
-  margin: 40px auto 0;
-  gap: 20px;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.bag-container .row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.bag {
+  width: 60px;
+  transition: transform 0.3s;
 }
 
 .bag {
