@@ -42,18 +42,25 @@ body {
 }
 
 .bag-container {
-  display: flex;
-  justify-content: space-between; /* đều nhau trong giới hạn */
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột cho hàng trên */
+  grid-template-rows: auto auto;
+  grid-gap: 10px 10px; /* khoảng cách hàng và cột */
+  width: 240px; /* bằng chiều rộng nút BẤT NGỜ */
   margin: 40px auto 0;
-  width: 240px; /* 👈 CHỈ RỘNG BẰNG NÚT */
-  gap: 4px; /* Khoảng cách nhỏ giữa các túi */
+  justify-items: center;
+  align-items: center;
 }
 
+
 .bag {
-  width: 40px; /* 👈 Điều chỉnh sao cho tổng chiều rộng 5 túi + gap ≈ 240px */
+  width: 60px; /* có thể điều chỉnh 60–70 nếu muốn to hơn */
   transition: transform 0.3s;
 }
+.bag:hover {
+  transform: scale(1.2);
+}
+
 
 .bag:hover {
   transform: scale(1.2);
