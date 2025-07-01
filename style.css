@@ -43,18 +43,18 @@ body {
 
 .bag-container {
   display: flex;
-  justify-content: center;
-  margin-top: 60px;
-  gap: 40px;
-  z-index: 3;
-  position: relative;
+  justify-content: space-between; /* đều nhau trong giới hạn */
+  align-items: center;
+  margin: 40px auto 0;
+  width: 240px; /* 👈 CHỈ RỘNG BẰNG NÚT */
+  gap: 4px; /* Khoảng cách nhỏ giữa các túi */
 }
 
 .bag {
-  width: 180px;
+  width: 40px; /* 👈 Điều chỉnh sao cho tổng chiều rộng 5 túi + gap ≈ 240px */
   transition: transform 0.3s;
-  z-index: 3;
 }
+
 .bag:hover {
   transform: scale(1.2);
 }
