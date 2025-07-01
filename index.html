@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xé túi mù – Trúng quà sinh nhật</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Màn hình mở đầu -->
+  <div id="intro" class="intro-screen">
+    <button class="red-button" onclick="startGame()">BẤT NGỜ ✨</button>
+    <audio id="firework" src="boom.mp3" preload="auto"></audio>
+  </div>
+
+  <!-- Biểu tượng cung (ban đầu ẩn) -->
+  <div id="cancer-container" class="hidden"></div>
+
+  <!-- Màn game chính -->
+  <div id="game" class="hidden">
+    <h1 id="title">Xé túi mù – Trúng quà sinh nhật 🎁</h1>
+    <audio id="bg-music" src="music.mp3" preload="auto" loop></audio>
+    <audio id="gift-music" src="gift.mp3" preload="auto"></audio>
+
+    <div class="bag-container">
+      <img class="bag" src="bag1.png" onclick="openBag(this)" />
+      <img class="bag" src="bag2.png" onclick="openBag(this)" />
+      <img class="bag" src="bag3.png" onclick="openBag(this)" />
+      <img class="bag" src="bag4.png" onclick="openBag(this)" />
+      <img class="bag" src="bag5.png" onclick="openBag(this)" />
+    </div>
+
+    <div class="popup hidden" id="popup">
+      <img id="rewardImage" src="" alt="Phần thưởng" />
+      <p>🎉 Một món quà hết sức ý nghĩa đến từ Vy và Quanh 💕</p>
+    </div>
+
+    <div id="final-message" class="hidden">
+      <p>🎁 Món quà này sẽ được 2 cô gái xinh đẹp chuẩn bị ít lâu<br>nên mong cô Ngọc sẽ kiên nhẫn chờ đợi 😚</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
