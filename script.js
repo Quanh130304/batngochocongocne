@@ -36,7 +36,7 @@ function openBag(el) {
   const rewardImage = document.getElementById("rewardImage");
   const giftMusic = document.getElementById("gift-music");
 
-  const random = Math.random() > 0.5 ? "dress1.jpg" : "dress2.jpg";
+  const random = Math.random() > 0.5 ? "Dress1.jpg" : "Dress2.jpg";
   rewardImage.src = random;
 
   popup.classList.remove("hidden");
