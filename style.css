@@ -61,7 +61,7 @@ body {
 }
 
 .bag {
-  width: 60px; /* có thể điều chỉnh 60–70 nếu muốn to hơn */
+  width: 100px; /* có thể điều chỉnh 60–70 nếu muốn to hơn */
   transition: transform 0.3s;
 }
 .bag:hover {
