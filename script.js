@@ -30,31 +30,27 @@ function startGame() {
     container.appendChild(img);
   }
 }
-
 function openBag(el) {
   if (hasOpened) return;
   hasOpened = true;
 
-  // Giảm độ sáng của các túi sau khi đã mở một túi
   document.querySelectorAll(".bag").forEach(b => b.style.opacity = 0.3);
 
-  // Hiển thị popup với phần thưởng
   const popup = document.getElementById("popup");
   const rewardImage = document.getElementById("rewardImage");
   const giftMusic = document.getElementById("gift-music");
 
-  // Chọn phần thưởng ngẫu nhiên
-  const random = Math.random() > 0.5 ? "dress1.jpg" : "dress2.jpg";
+  const random = Math.random() > 0.5 ? "Dress1.jpg" : "Dress2.jpg";
   rewardImage.src = random;
+  rewardImage.style.display = "block"; // đảm bảo hiện ảnh
 
   popup.classList.remove("hidden");
   giftMusic.play();
 
-  // Ẩn popup sau 0.5 giây và hiển thị thông điệp cuối
   setTimeout(() => {
     popup.classList.add("hidden");
     document.querySelector(".bag-container").style.display = "none";
     document.getElementById("title").style.display = "none";
     document.getElementById("final-message").classList.remove("hidden");
-  }, 500);
+  }, 1200); // tăng thời gian popup để kịp xem ảnh
 }
