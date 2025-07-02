@@ -26,17 +26,20 @@ function startGame() {
 }
 
 
+let hasOpened = false;
+
 function openBag(el) {
   if (hasOpened) return;
   hasOpened = true;
 
-  document.querySelectorAll(".bag").forEach(b => b.style.opacity = 0.3);
+  const bags = document.querySelectorAll(".bag");
+  bags.forEach(b => b.style.opacity = 0.3);
 
   const popup = document.getElementById("popup");
   const rewardImage = document.getElementById("rewardImage");
   const giftMusic = document.getElementById("gift-music");
 
-  const random = Math.random() > 0.5 ? "Dress1.jpg" : "Dress2.jpg";
+  const random = Math.random() > 0.5 ? "dress1.jpg" : "dress2.jpg";
   rewardImage.src = random;
 
   popup.classList.remove("hidden");
@@ -44,8 +47,6 @@ function openBag(el) {
 
   setTimeout(() => {
     popup.classList.add("hidden");
-    document.querySelector(".bag-container").style.display = "none";
-    document.getElementById("title").style.display = "none";
     document.getElementById("final-message").classList.remove("hidden");
-  }, 500);
+  }, 1500); /* Giảm thời gian hiển thị quà xuống 1.5 giây */
 }
