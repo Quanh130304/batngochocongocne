@@ -71,7 +71,7 @@ body {
 
 /* Responsive cho màn hình nhỏ */
 /* 2. THU NHỎ hộp quà & dòng chữ cuối trên ĐIỆN THOẠI */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .bag-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, auto);
@@ -83,12 +83,12 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 22vw;          /* Thu nhỏ hộp quà trên điện thoại gấp đôi */
+    width: 18vw;          /* Thu nhỏ hộp quà trên điện thoại gấp đôi */
     min-width: 30px;
     max-width: 24vw;
   }
   #final-message {
-    font-size: 14px !important;   /* Thu nhỏ dòng chữ cuối gấp đôi */
+    font-size: 10px !important;   /* Thu nhỏ dòng chữ cuối gấp đôi */
     padding: 2vw 2vw;
     line-height: 1.13;
   }
