@@ -48,8 +48,22 @@ body {
   margin-top: 60px;
   z-index: 3;
   position: relative;
-  justify-items: center; /* Căn giữa các hộp quà */
-  grid-template-rows: 1fr 1fr; /* 2 hàng */
+  justify-items: center; /* Căn giữa các túi quà */
+  grid-template-rows: auto auto; /* Tự động chiều cao cho các hàng */
+}
+
+.bag:nth-child(1),
+.bag:nth-child(2) {
+  grid-column: span 1; /* 2 túi ở trên */
+}
+
+.bag:nth-child(3) {
+  grid-column: span 1; /* 1 túi ở giữa */
+}
+
+.bag:nth-child(4),
+.bag:nth-child(5) {
+  grid-column: span 1; /* 2 túi ở dưới */
 }
 
 .bag {
