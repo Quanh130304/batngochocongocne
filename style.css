@@ -41,32 +41,24 @@ body {
   position: relative;
 }
 
-
 .bag-container {
   display: flex;
-  justify-content: space-between; /* Đảm bảo các hộp quà nằm giữa */
-  gap: 20px; /* Khoảng cách giữa các hộp */
-  max-width: 100%;  /* Đảm bảo 5 hộp quà nằm trong phạm vi của màn hình */
-  margin: 0 auto;
+  justify-content: center;
+  margin-top: 60px;
+  gap: 40px;
+  z-index: 3;
+  position: relative;
 }
-
 
 .bag {
-  width: 130px; /* Tăng kích thước hộp quà lên */
+  width: 180px;
   transition: transform 0.3s;
-  z-index: 3; /* Đảm bảo hộp quà ở trên cùng */
+  z-index: 3;
 }
+
 .bag:hover {
-  transform: scale(1.3); /* Phóng to thêm khi hover */
+  transform: scale(1.2);
 }
-
-.cancer {
-  position: absolute;
-  width: 50px; /* Điều chỉnh kích thước cung */
-  opacity: 0.8;
-  z-index: 1;  /* Đảm bảo biểu tượng cung nằm phía sau hộp quà */
-}
-
 
 .popup {
   position: absolute;
@@ -123,28 +115,16 @@ body {
   to { text-shadow: 0 0 20px gold; }
 }
 
-/* Biểu tượng cung */
 .cancer {
   position: absolute;
-  width: 50px;
-  top: 15%; /* Đảm bảo biểu tượng cung không che khuất các phần khác */
-  opacity: 0.8;
+  width: 100px;
+  opacity: 0.9;
   z-index: 1;
   animation: float 6s infinite ease-in-out;
 }
-
 
 @keyframes float {
   0%   { transform: translateY(0); opacity: 0.5; }
   50%  { transform: translateY(-60px); opacity: 1; }
   100% { transform: translateY(0); opacity: 0.5; }
-}
-@media (max-width: 400px) {
-  .bag-container {
-    max-width: 250px;
-    gap: 16px;
-  }
-  .bag {
-    width: 55px;
-  }
 }
