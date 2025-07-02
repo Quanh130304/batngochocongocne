@@ -44,15 +44,12 @@ body {
 
 .bag-container {
   display: flex;
-  flex-wrap: wrap;               /* Cho phép xuống dòng */
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-  gap: 40px 50px;                /* cách hàng & cột */
-  max-width: 400px;             /* Giới hạn chiều rộng như nút bất ngờ */
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: space-between; /* Đảm bảo các hộp quà nằm giữa */
+  gap: 20px; /* Khoảng cách giữa các hộp */
+  max-width: 100%;  /* Đảm bảo 5 hộp quà nằm trong phạm vi của màn hình */
+  margin: 0 auto;
 }
+
 
 .bag {
   width: 130px; /* Tăng kích thước hộp quà lên */
