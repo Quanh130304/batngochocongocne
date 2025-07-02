@@ -126,11 +126,13 @@ body {
 /* Biểu tượng cung */
 .cancer {
   position: absolute;
-  width: 100px;
-  opacity: 0.9;
+  width: 50px;
+  top: 15%; /* Đảm bảo biểu tượng cung không che khuất các phần khác */
+  opacity: 0.8;
   z-index: 1;
   animation: float 6s infinite ease-in-out;
 }
+
 
 @keyframes float {
   0%   { transform: translateY(0); opacity: 0.5; }
