@@ -59,31 +59,21 @@ body {
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
 .bag {
-  width: 500px;        /* Hộp quà rất to */
+  width: 260px;        /* Vừa đẹp trên desktop */
   max-width: 99vw;
   transition: transform 0.3s;
   z-index: 3;
 }
 .bag:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 /* Responsive cho màn hình nhỏ */
-@media (max-width: 1200px) {
-  .bag {
-    width: 340px;
-  }
-}
-@media (max-width: 900px) {
-  .bag {
-    width: 220px;
-  }
-}
 @media (max-width: 700px) {
   .bag-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, auto);
-    gap: 12px 2vw;
+    gap: 15px 2vw;
   }
   .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
   .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
@@ -91,12 +81,14 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 45vw;
-    min-width: 100px;
-    max-width: 170px;
+    width: 90vw;        /* Rất to trên điện thoại */
+    min-width: 110px;
+    max-width: 99vw;
   }
   #final-message {
-    font-size: 44px;
+    font-size: 80px !important;   /* To gấp đôi bình thường */
+    padding: 10vw 2vw;
+    line-height: 1.1;
   }
 }
 
@@ -142,13 +134,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: gold;
-  font-size: 80px;    /* GẤP ĐÔI so với trước */
+  font-size: 40px;
   animation: glow 2s infinite alternate;
   background-color: black;
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
   z-index: 11;
-  max-width: 95vw;
+  max-width: 90vw;
 }
 
 @keyframes glow {
