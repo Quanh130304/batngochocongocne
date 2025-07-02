@@ -1,20 +1,26 @@
 let hasOpened = false;
 
 function startGame() {
+  // Ẩn màn hình intro
   document.getElementById("intro").style.display = "none";
+  
+  // Hiển thị màn hình game
   document.getElementById("game").classList.remove("hidden");
 
+  // Phát nhạc nền và hiệu ứng pháo bông
   const bgMusic = document.getElementById("bg-music");
   const firework = document.getElementById("firework");
 
   bgMusic.play();
-  firework.volume = 1.0; // 🔊 Tăng âm lượng boom lên tối đa
+  firework.volume = 1.0; // 🔊 Tăng âm lượng của pháo bông lên tối đa
   firework.play();
 
-  // Hiển thị biểu tượng cung
+  // Hiển thị biểu tượng cung (cancer symbol)
   const container = document.getElementById("cancer-container");
   container.classList.remove("hidden");
-  for (let i = 0; i < 20; i++) { // Nếu bạn muốn nhiều biểu tượng hơn
+  
+  // Tạo nhiều biểu tượng cung
+  for (let i = 0; i < 20; i++) { 
     const img = document.createElement("img");
     img.src = "cancer-symbol.png";
     img.className = "cancer";
@@ -25,28 +31,30 @@ function startGame() {
   }
 }
 
-
-let hasOpened = false;
-
 function openBag(el) {
   if (hasOpened) return;
   hasOpened = true;
 
-  const bags = document.querySelectorAll(".bag");
-  bags.forEach(b => b.style.opacity = 0.3);
+  // Giảm độ sáng của các túi sau khi đã mở một túi
+  document.querySelectorAll(".bag").forEach(b => b.style.opacity = 0.3);
 
+  // Hiển thị popup với phần thưởng
   const popup = document.getElementById("popup");
   const rewardImage = document.getElementById("rewardImage");
   const giftMusic = document.getElementById("gift-music");
 
+  // Chọn phần thưởng ngẫu nhiên
   const random = Math.random() > 0.5 ? "dress1.jpg" : "dress2.jpg";
   rewardImage.src = random;
 
   popup.classList.remove("hidden");
   giftMusic.play();
 
+  // Ẩn popup sau 0.5 giây và hiển thị thông điệp cuối
   setTimeout(() => {
     popup.classList.add("hidden");
+    document.querySelector(".bag-container").style.display = "none";
+    document.getElementById("title").style.display = "none";
     document.getElementById("final-message").classList.remove("hidden");
-  }, 1500); /* Giảm thời gian hiển thị quà xuống 1.5 giây */
+  }, 500);
 }
