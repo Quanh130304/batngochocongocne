@@ -58,8 +58,8 @@ body {
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
 .bag {
-  width: 320px;         /* Hộp quà rất to */
-  max-width: 99vw;
+  width: 400px;         /* Hộp quà rất to */
+  max-width: 120vw;
   transition: transform 0.3s;
   z-index: 3;
 }
@@ -70,7 +70,7 @@ body {
 /* Responsive cho màn hình nhỏ */
 @media (max-width: 900px) {
   .bag {
-    width: 200px;
+    width: 300px;
   }
 }
 @media (max-width: 700px) {
@@ -90,7 +90,7 @@ body {
     max-width: 185px;
   }
   #final-message {
-    font-size: 22px;
+    font-size: 60px;
   }
 }
 
