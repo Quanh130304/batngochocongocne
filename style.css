@@ -58,9 +58,10 @@ body {
 .bag:nth-child(4) { grid-column: 1; grid-row: 2; }
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
+/* 1. THU NHỎ hộp quà trên desktop */
 .bag {
-  width: 140px;        /* Nhỏ lại trên desktop để luôn thấy 5 hộp */
-  max-width: 18vw;
+  width: 100px;        /* Nhỏ hơn nữa trên desktop */
+  max-width: 12vw;     /* Giới hạn tối đa */
   transition: transform 0.3s;
   z-index: 3;
 }
@@ -69,6 +70,7 @@ body {
 }
 
 /* Responsive cho màn hình nhỏ */
+/* 2. PHÓNG TO hộp quà & dòng chữ cuối trên ĐIỆN THOẠI */
 @media (max-width: 700px) {
   .bag-container {
     grid-template-columns: 1fr 1fr;
@@ -81,7 +83,7 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 90vw;        /* Rất to trên điện thoại */
+    width: 90vw;        /* Phóng to tối đa trên điện thoại */
     min-width: 120px;
     max-width: 99vw;
   }
