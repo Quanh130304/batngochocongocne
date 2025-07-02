@@ -80,12 +80,12 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 92vw;        /* CỰC TO trên điện thoại */
+    width: 150vw;        /* CỰC TO trên điện thoại */
     min-width: 120px;
     max-width: 98vw;
   }
   #final-message {
-    font-size: 80px !important;   /* To gấp đôi desktop */
+    font-size: 150px !important;   /* To gấp đôi desktop */
     padding: 7vw 2vw;
     line-height: 1.13;
   }
