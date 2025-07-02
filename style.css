@@ -45,38 +45,63 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, auto);
-  gap: 20px;
+  gap: 40px;
   margin-top: 60px;
   justify-items: center;
   align-items: center;
   position: relative;
 }
 
-.bag:nth-child(1) { /* Hộp 1 – trên trái */
+/* Đặt vị trí từng hộp quà */
+.bag:nth-child(1) { /* Trên trái */
   grid-column: 1;
   grid-row: 1;
 }
-.bag:nth-child(2) { /* Hộp 2 – trên phải */
+.bag:nth-child(2) { /* Trên phải */
   grid-column: 3;
   grid-row: 1;
 }
-.bag:nth-child(3) { /* Hộp 3 – giữa giữa */
+.bag:nth-child(3) { /* Giữa giữa */
   grid-column: 2;
   grid-row: 2;
 }
-.bag:nth-child(4) { /* Hộp 4 – dưới trái */
+.bag:nth-child(4) { /* Dưới trái */
   grid-column: 1;
   grid-row: 3;
 }
-.bag:nth-child(5) { /* Hộp 5 – dưới phải */
+.bag:nth-child(5) { /* Dưới phải */
   grid-column: 3;
   grid-row: 3;
 }
 
 .bag {
-  width: 150px;
+  width: 240px;     /* Phóng to hộp quà */
+  max-width: 98vw;  /* Đảm bảo không tràn màn hình nhỏ */
   transition: transform 0.3s;
   z-index: 3;
+}
+
+.bag:hover {
+  transform: scale(1.15);
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 700px) {
+  .bag-container {
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+  .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .bag:nth-child(3) { grid-column: 1 / span 2; grid-row: 2; justify-self: center;}
+  .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
+  .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
+  .bag {
+    width: 38vw;
+    min-width: 90px;
+    max-width: 140px;
+  }
 }
 
 .bag:hover {
