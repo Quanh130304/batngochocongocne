@@ -41,7 +41,6 @@ body {
   position: relative;
 }
 
-/* BAG LAYOUT: 3 trên, 2 dưới */
 .bag-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -59,8 +58,8 @@ body {
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
 .bag {
-  width: 260px;        /* Vừa đẹp trên desktop */
-  max-width: 99vw;
+  width: 240px;        /* vừa khung desktop */
+  max-width: 95vw;
   transition: transform 0.3s;
   z-index: 3;
 }
@@ -73,7 +72,7 @@ body {
   .bag-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, auto);
-    gap: 15px 2vw;
+    gap: 16px 3vw;
   }
   .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
   .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
@@ -81,14 +80,14 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 90vw;        /* Rất to trên điện thoại */
-    min-width: 110px;
-    max-width: 99vw;
+    width: 92vw;        /* CỰC TO trên điện thoại */
+    min-width: 120px;
+    max-width: 98vw;
   }
   #final-message {
-    font-size: 80px !important;   /* To gấp đôi bình thường */
-    padding: 10vw 2vw;
-    line-height: 1.1;
+    font-size: 80px !important;   /* To gấp đôi desktop */
+    padding: 7vw 2vw;
+    line-height: 1.13;
   }
 }
 
@@ -141,6 +140,7 @@ body {
   border-radius: 20px;
   z-index: 11;
   max-width: 90vw;
+  line-height: 1.14;
 }
 
 @keyframes glow {
