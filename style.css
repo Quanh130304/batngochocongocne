@@ -75,7 +75,7 @@ body {
 }
 
 .bag {
-  width: 240px;     /* Phóng to hộp quà */
+  width: 300px;     /* Phóng to hộp quà */
   max-width: 98vw;  /* Đảm bảo không tràn màn hình nhỏ */
   transition: transform 0.3s;
   z-index: 3;
