@@ -55,14 +55,21 @@ body {
 }
 
 .bag {
-  width: 150px;
+  width: 130px; /* Tăng kích thước hộp quà lên */
   transition: transform 0.3s;
-}
-
+  z-index: 3; /* Đảm bảo hộp quà ở trên cùng */
 }
 .bag:hover {
-  transform: scale(1.2);
+  transform: scale(1.3); /* Phóng to thêm khi hover */
 }
+
+.cancer {
+  position: absolute;
+  width: 50px; /* Điều chỉnh kích thước cung */
+  opacity: 0.8;
+  z-index: 1;  /* Đảm bảo biểu tượng cung nằm phía sau hộp quà */
+}
+
 
 .popup {
   position: absolute;
