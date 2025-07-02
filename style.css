@@ -60,8 +60,8 @@ body {
 
 /* 1. PHÓNG TO hộp quà trên desktop */
 .bag {
-  width: 220px;        /* Phóng to hộp quà trên desktop */
-  max-width: 20vw;
+  width: 440px;        /* Phóng to hộp quà trên desktop gấp đôi */
+  max-width: 40vw;
   transition: transform 0.3s;
   z-index: 3;
 }
@@ -83,12 +83,12 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 45vw;          /* Thu nhỏ hộp quà trên điện thoại */
-    min-width: 60px;
-    max-width: 49vw;
+    width: 22vw;          /* Thu nhỏ hộp quà trên điện thoại gấp đôi */
+    min-width: 30px;
+    max-width: 24vw;
   }
   #final-message {
-    font-size: 28px !important;   /* Thu nhỏ dòng chữ cuối */
+    font-size: 14px !important;   /* Thu nhỏ dòng chữ cuối gấp đôi */
     padding: 2vw 2vw;
     line-height: 1.13;
   }
