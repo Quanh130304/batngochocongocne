@@ -41,6 +41,7 @@ body {
   position: relative;
 }
 
+/* BAG LAYOUT: 3 trên, 2 dưới */
 .bag-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -51,7 +52,6 @@ body {
   align-items: center;
   position: relative;
 }
-
 .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
 .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
 .bag:nth-child(3) { grid-column: 3; grid-row: 1; }
@@ -59,17 +59,16 @@ body {
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
 .bag {
-  width: 220px;
-  max-width: 98vw;
+  width: 280px;
+  max-width: 96vw;
   transition: transform 0.3s;
   z-index: 3;
 }
-
 .bag:hover {
   transform: scale(1.15);
 }
 
-/* Responsive cho điện thoại */
+/* Responsive cho màn hình nhỏ hơn 700px */
 @media (max-width: 700px) {
   .bag-container {
     grid-template-columns: 1fr 1fr;
@@ -82,38 +81,16 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 40vw;
-    min-width: 90px;
-    max-width: 140px;
+    width: 45vw;
+    min-width: 110px;
+    max-width: 185px;
   }
-}
-.bag:hover {
-  transform: scale(1.15);
-}
-
-/* Responsive cho điện thoại */
-@media (max-width: 700px) {
-  .bag-container {
-    gap: 15px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, auto);
-  }
-  .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
-  .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
-  .bag:nth-child(3) { grid-column: 1 / span 2; grid-row: 2; justify-self: center;}
-  .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
-  .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
-  .bag {
-    width: 38vw;
-    min-width: 90px;
-    max-width: 140px;
+  #final-message {
+    font-size: 22px;
   }
 }
 
-.bag:hover {
-  transform: scale(1.2);
-}
-
+/* Popup và các thành phần khác giữ nguyên */
 .popup {
   position: absolute;
   top: 50%;
@@ -183,32 +160,10 @@ body {
   100% { transform: translateY(0); opacity: 0.5; }
 }
 
-/* Làm cho hình ảnh phần thưởng có thể thay đổi kích thước linh hoạt trên điện thoại */
+/* Phần thưởng linh hoạt */
 #rewardImage {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
-}
-
-/* Điều chỉnh cho các màn hình nhỏ */
-
-@media (max-width: 600px) {
-  .bag-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, auto);
-  }
-  .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
-  .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
-  .bag:nth-child(3) { grid-column: 1 / span 2; grid-row: 2; justify-self: center; }
-  .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
-  .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
-}
-  .bag {
-    width: 120px; /* Giảm kích thước của các túi trên điện thoại */
-  }
-
-  #final-message {
-    font-size: 22px; /* Font nhỏ hơn trên điện thoại */
-  }
 }
