@@ -1,7 +1,7 @@
 let hasOpened = false;
 
 function startGame() {
-  // Ẩn màn hình intro
+  // Ẩn màn hình intro khi người dùng nhấn nút
   document.getElementById("intro").style.display = "none";
   
   // Hiển thị màn hình game
