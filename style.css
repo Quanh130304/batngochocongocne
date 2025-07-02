@@ -161,13 +161,18 @@ body {
 }
 
 /* Điều chỉnh cho các màn hình nhỏ */
+
 @media (max-width: 600px) {
   .bag-container {
-    gap: 10px;
-    grid-template-columns: 1fr 1fr; /* 2 cột trên điện thoại */
-    grid-template-rows: 1fr 1fr 1fr; /* 3 hàng trên điện thoại */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
   }
-
+  .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .bag:nth-child(3) { grid-column: 1 / span 2; grid-row: 2; justify-self: center; }
+  .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
+  .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
+}
   .bag {
     width: 120px; /* Giảm kích thước của các túi trên điện thoại */
   }
