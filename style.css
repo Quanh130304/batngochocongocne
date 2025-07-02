@@ -43,27 +43,34 @@ body {
 
 .bag-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cột */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
   gap: 20px;
   margin-top: 60px;
-  z-index: 3;
+  justify-items: center;
+  align-items: center;
   position: relative;
-  justify-items: center; /* Căn giữa các túi quà */
-  grid-template-rows: auto auto; /* Tự động chiều cao cho các hàng */
 }
 
-.bag:nth-child(1),
-.bag:nth-child(2) {
-  grid-column: span 1; /* 2 túi ở trên */
+.bag:nth-child(1) { /* Hộp 1 – trên trái */
+  grid-column: 1;
+  grid-row: 1;
 }
-
-.bag:nth-child(3) {
-  grid-column: span 1; /* 1 túi ở giữa */
+.bag:nth-child(2) { /* Hộp 2 – trên phải */
+  grid-column: 3;
+  grid-row: 1;
 }
-
-.bag:nth-child(4),
-.bag:nth-child(5) {
-  grid-column: span 1; /* 2 túi ở dưới */
+.bag:nth-child(3) { /* Hộp 3 – giữa giữa */
+  grid-column: 2;
+  grid-row: 2;
+}
+.bag:nth-child(4) { /* Hộp 4 – dưới trái */
+  grid-column: 1;
+  grid-row: 3;
+}
+.bag:nth-child(5) { /* Hộp 5 – dưới phải */
+  grid-column: 3;
+  grid-row: 3;
 }
 
 .bag {
