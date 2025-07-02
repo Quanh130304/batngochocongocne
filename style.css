@@ -83,12 +83,12 @@ body {
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 18vw;          /* Thu nhỏ hộp quà trên điện thoại gấp đôi */
+    width: 20vw;          /* Thu nhỏ hộp quà trên điện thoại gấp đôi */
     min-width: 30px;
     max-width: 24vw;
   }
   #final-message {
-    font-size: 10px !important;   /* Thu nhỏ dòng chữ cuối gấp đôi */
+    font-size: 20px !important;   /* Thu nhỏ dòng chữ cuối gấp đôi */
     padding: 2vw 2vw;
     line-height: 1.13;
   }
