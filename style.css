@@ -42,13 +42,14 @@ body {
 }
 
 .bag-container {
-  display: flex;
-  justify-content: space-evenly; /* Căn giữa và phân bố đều các túi */
-  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
   gap: 20px;
+  margin-top: 60px;
   z-index: 3;
   position: relative;
-  flex-wrap: wrap; /* Cho phép các túi chuyển sang hàng mới trên màn hình nhỏ */
+  justify-items: center; /* Căn giữa các hộp quà */
+  grid-template-rows: 1fr 1fr; /* 2 hàng */
 }
 
 .bag {
@@ -142,7 +143,8 @@ body {
 @media (max-width: 600px) {
   .bag-container {
     gap: 10px;
-    flex-direction: column; /* Sắp xếp các túi theo chiều dọc trên màn hình nhỏ */
+    grid-template-columns: 1fr 1fr; /* 2 cột trên điện thoại */
+    grid-template-rows: 1fr 1fr 1fr; /* 3 hàng trên điện thoại */
   }
 
   .bag {
