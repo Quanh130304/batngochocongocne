@@ -41,6 +41,7 @@ body {
   position: relative;
 }
 
+/* BAG LAYOUT: 3 trên, 2 dưới */
 .bag-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -58,26 +59,31 @@ body {
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
 .bag {
-  width: 400px;         /* Hộp quà rất to */
-  max-width: 120vw;
+  width: 500px;        /* Hộp quà rất to */
+  max-width: 99vw;
   transition: transform 0.3s;
   z-index: 3;
 }
 .bag:hover {
-  transform: scale(1.18);
+  transform: scale(1.2);
 }
 
 /* Responsive cho màn hình nhỏ */
+@media (max-width: 1200px) {
+  .bag {
+    width: 340px;
+  }
+}
 @media (max-width: 900px) {
   .bag {
-    width: 300px;
+    width: 220px;
   }
 }
 @media (max-width: 700px) {
   .bag-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, auto);
-    gap: 15px 10px;
+    gap: 12px 2vw;
   }
   .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
   .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
@@ -86,11 +92,11 @@ body {
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
     width: 45vw;
-    min-width: 110px;
-    max-width: 185px;
+    min-width: 100px;
+    max-width: 170px;
   }
   #final-message {
-    font-size: 60px;
+    font-size: 44px;
   }
 }
 
@@ -136,13 +142,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: gold;
-  font-size: 40px;    /* Phóng to dòng chữ món quà này... */
+  font-size: 80px;    /* GẤP ĐÔI so với trước */
   animation: glow 2s infinite alternate;
   background-color: black;
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
   z-index: 11;
-  max-width: 90vw;
+  max-width: 95vw;
 }
 
 @keyframes glow {
