@@ -58,10 +58,10 @@ body {
 .bag:nth-child(4) { grid-column: 1; grid-row: 2; }
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
-/* 1. THU NHỎ hộp quà trên desktop */
+/* 1. PHÓNG TO hộp quà trên desktop */
 .bag {
-  width: 100px;        /* Nhỏ hơn nữa trên desktop */
-  max-width: 12vw;     /* Giới hạn tối đa */
+  width: 220px;        /* Phóng to hộp quà trên desktop */
+  max-width: 20vw;
   transition: transform 0.3s;
   z-index: 3;
 }
@@ -70,30 +70,29 @@ body {
 }
 
 /* Responsive cho màn hình nhỏ */
-/* 2. PHÓNG TO hộp quà & dòng chữ cuối trên ĐIỆN THOẠI */
+/* 2. THU NHỎ hộp quà & dòng chữ cuối trên ĐIỆN THOẠI */
 @media (max-width: 700px) {
-  .bag {
-    width: 45vw;          /* Nhỏ lại còn 1/2 so với bản phóng to trước */
-    min-width: 60px;      /* Nhỏ hơn nữa */
-    max-width: 49vw;
+  .bag-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 20px 4vw;
   }
-  #final-message {
-    font-size: 40px !important;   /* Nhỏ lại còn 1/2 so với trước */
-    padding: 3vw 2vw;
-    line-height: 1.13;
-  }
-}
   .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
   .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
   .bag:nth-child(3) { grid-column: 1 / span 2; grid-row: 2; justify-self: center;}
   .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
   .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
   .bag {
-    width: 90vw;        /* Phóng to tối đa trên điện thoại */
-    min-width: 120px;
-    max-width: 99vw;
+    width: 45vw;          /* Thu nhỏ hộp quà trên điện thoại */
+    min-width: 60px;
+    max-width: 49vw;
   }
-
+  #final-message {
+    font-size: 28px !important;   /* Thu nhỏ dòng chữ cuối */
+    padding: 2vw 2vw;
+    line-height: 1.13;
+  }
+}
 
 .popup {
   position: absolute;
