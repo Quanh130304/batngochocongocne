@@ -41,7 +41,6 @@ body {
   position: relative;
 }
 
-/* BAG LAYOUT: 3 trên, 2 dưới */
 .bag-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -59,16 +58,21 @@ body {
 .bag:nth-child(5) { grid-column: 3; grid-row: 2; }
 
 .bag {
-  width: 280px;
-  max-width: 96vw;
+  width: 320px;         /* Hộp quà rất to */
+  max-width: 99vw;
   transition: transform 0.3s;
   z-index: 3;
 }
 .bag:hover {
-  transform: scale(1.15);
+  transform: scale(1.18);
 }
 
-/* Responsive cho màn hình nhỏ hơn 700px */
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 900px) {
+  .bag {
+    width: 200px;
+  }
+}
 @media (max-width: 700px) {
   .bag-container {
     grid-template-columns: 1fr 1fr;
@@ -90,7 +94,6 @@ body {
   }
 }
 
-/* Popup và các thành phần khác giữ nguyên */
 .popup {
   position: absolute;
   top: 50%;
@@ -133,12 +136,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: gold;
-  font-size: 28px;
+  font-size: 40px;    /* Phóng to dòng chữ món quà này... */
   animation: glow 2s infinite alternate;
   background-color: black;
   padding: 20px;
   border-radius: 20px;
   z-index: 11;
+  max-width: 90vw;
 }
 
 @keyframes glow {
@@ -160,7 +164,6 @@ body {
   100% { transform: translateY(0); opacity: 0.5; }
 }
 
-/* Phần thưởng linh hoạt */
 #rewardImage {
   max-width: 100%;
   height: auto;
