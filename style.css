@@ -16,13 +16,13 @@ body {
 }
 
 .red-button {
-  padding: 30px 60px;
-  font-size: 48px;
+  padding: 36px 90px;
+  font-size: 52px;
   color: white;
   background-color: red;
   border: none;
   border-radius: 30px;
-  box-shadow: 0 0 50px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 60px rgba(255, 0, 0, 0.7);
   cursor: pointer;
   animation: pulse 2s infinite;
 }
@@ -34,9 +34,9 @@ body {
 }
 
 #title {
-  font-size: 3em;
+  font-size: 3.2em;
   margin-top: 30px;
-  text-shadow: 0 0 30px gold;
+  text-shadow: 0 0 32px gold;
   z-index: 3;
   position: relative;
 }
@@ -46,8 +46,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 40px 60px;
-  margin-top: 60px;
+  gap: 48px 80px;
+  margin-top: 70px;
   justify-items: center;
   align-items: center;
   position: relative;
@@ -60,8 +60,8 @@ body {
 
 /* 1. PHÓNG TO hộp quà trên desktop */
 .bag {
-  width: 440px;        /* To gấp đôi bình thường trên desktop */
-  max-width: 40vw;
+  width: 550px;        /* To hơn nhiều so với mặc định */
+  max-width: 28vw;
   transition: transform 0.3s;
   z-index: 3;
 }
@@ -69,44 +69,21 @@ body {
   transform: scale(1.15);
 }
 
-/* Responsive cho màn hình nhỏ (điện thoại) */
-/* 2. THU NHỎ hộp quà & dòng chữ cuối trên ĐIỆN THOẠI */
-@media (max-width: 700px) {
-  .bag-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, auto);
-    gap: 20px 4vw;
-  }
-  .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
-  .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
-  .bag:nth-child(3) { grid-column: 1 / span 2; grid-row: 2; justify-self: center;}
-  .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
-  .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
-  .bag {
-    width: 45vw;          /* Hộp quà nhỏ hơn trên điện thoại */
-    min-width: 60px;
-    max-width: 49vw;
-  }
-  #final-message {
-    font-size: 22px !important;   /* Chữ cuối cùng to như chữ phần thưởng */
-    padding: 2vw 2vw;
-    line-height: 1.13;
-  }
-}
-
+/* Popup phần thưởng */
 .popup {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   background: #111;
-  padding: 30px;
-  border-radius: 20px;
+  padding: 36px 48px;
+  border-radius: 26px;
   color: yellow;
-  font-size: 22px;
-  box-shadow: 0 0 30px yellow;
+  font-size: 28px;
+  box-shadow: 0 0 48px 15px yellow;
   animation: popupIn 0.3s ease-out;
   z-index: 10;
+  max-width: 90vw;
 }
 
 @keyframes popupIn {
@@ -120,35 +97,37 @@ body {
   }
 }
 
-#popup img {
-  width: 200px;
+#popup img, .popup img {
+  width: 120px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .hidden {
   display: none;
 }
 
+/* 2. Chữ cuối cùng to, nổi bật */
 #final-message {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: gold;
-  font-size: 40px;
+  font-size: 32px; /* Tăng size trên desktop */
   animation: glow 2s infinite alternate;
   background-color: black;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 24px 32px;
+  border-radius: 22px;
   z-index: 11;
   max-width: 90vw;
-  line-height: 1.14;
+  line-height: 1.18;
+  text-shadow: 0 0 18px yellow, 0 0 6px #fff;
 }
 
 @keyframes glow {
   from { text-shadow: 0 0 10px gold; }
-  to { text-shadow: 0 0 20px gold; }
+  to { text-shadow: 0 0 22px gold; }
 }
 
 .cancer {
@@ -170,4 +149,33 @@ body {
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 700px) {
+  .bag-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 20px 4vw;
+    margin-top: 18px;
+  }
+  .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .bag:nth-child(3) { grid-column: 1 / span 2; grid-row: 2; justify-self: center;}
+  .bag:nth-child(4) { grid-column: 1; grid-row: 3; }
+  .bag:nth-child(5) { grid-column: 2; grid-row: 3; }
+  .bag {
+    width: 45vw;
+    min-width: 60px;
+    max-width: 49vw;
+  }
+  #final-message {
+    font-size: 22px !important;
+    padding: 2vw 2vw;
+    line-height: 1.13;
+  }
+  .popup {
+    font-size: 18px;
+    padding: 20px 8px;
+  }
 }
