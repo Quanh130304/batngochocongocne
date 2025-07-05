@@ -41,23 +41,25 @@ body {
 
 /* Bag layout: 3 trên, 2 dưới giữa, to và không đụng nhau */
 .bag-container {
-  margin-top: 40px;
+  margin-top: 36px;
   display: grid;
   grid-template-columns: 1fr 340px 340px 340px 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0 60px; /* dọc, ngang */
+  column-gap: 60px;
+  row-gap: 24px;
   justify-content: center;
   align-items: end;
   width: 100vw;
   max-width: 1700px;
-  min-height: 600px;
+  min-height: 420px;   /* GIẢM chiều cao tối thiểu để không tràn đáy */
+  height: 70vh;        /* HẠ chế độ cao tương đối phù hợp */
   position: relative;
   z-index: 2;
 }
 .bag {
   width: 340px;
   max-width: 95vw;
-  min-width: 180px;
+  min-width: 140px;
   transition: transform 0.3s;
   z-index: 3;
   cursor: pointer;
@@ -93,14 +95,8 @@ body {
   width: fit-content;
 }
 @keyframes popupIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.2);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.2);}
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1);}
 }
 #popup img, .popup img, #rewardImage {
   width: 330px;
@@ -111,9 +107,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
 #final-message {
   position: fixed;
@@ -140,9 +134,7 @@ body {
   justify-content: center;
   line-height: 1.22;
 }
-#final-message.show {
-  display: flex !important;
-}
+#final-message.show { display: flex !important; }
 #final-message p {
   margin: 0;
   font-size: 1em;
@@ -183,8 +175,9 @@ body {
 @media (max-width: 1100px) {
   .bag-container {
     grid-template-columns: 1fr 30vw 30vw 30vw 1fr;
-    gap: 0 3vw;
-    min-height: 260px;
+    column-gap: 2vw;
+    min-height: 200px;
+    height: 54vw;
   }
   .bag {
     width: 30vw;
@@ -196,7 +189,10 @@ body {
   .bag-container {
     grid-template-columns: 1fr 42vw 42vw 42vw 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 0 2vw;
+    column-gap: 1vw;
+    row-gap: 7vw;
+    min-height: 0;
+    height: auto;
   }
   .bag {
     width: 42vw;
