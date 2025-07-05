@@ -5,6 +5,7 @@ body {
   overflow: hidden;
   color: white;
   text-align: center;
+  position: relative;
 }
 .intro-screen {
   background-color: black;
@@ -38,39 +39,36 @@ body {
   font-weight: bold;
 }
 
-/* Bag layout: 3 trên, 2 dưới giữa, luôn cách nhau */
 .bag-container {
   margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  gap: 0px 100px; /* dọc, ngang */
+  justify-content: center;
+  align-items: end;
   width: 100vw;
   max-width: 1400px;
   min-height: 500px;
-}
-.bag-row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-}
-.bag-row-top {
-  gap: 100px;
-  margin-bottom: -64px;
-}
-.bag-row-bottom {
-  gap: 250px;
+  position: relative;
+  z-index: 2;
 }
 .bag {
-  width: 220px;
+  width: 190px;
   max-width: 15vw;
-  min-width: 120px;
+  min-width: 100px;
   transition: transform 0.3s;
   z-index: 3;
   cursor: pointer;
-  margin: 0 0; /* không margin, đã có gap */
+  margin: 0;
   background: none;
+  grid-row: 1;
 }
+.bag1 { grid-column: 1; }
+.bag2 { grid-column: 2; }
+.bag3 { grid-column: 3; }
+.bag4 { grid-row: 2; grid-column: 2; margin-top: 30px; }
+.bag5 { grid-row: 2; grid-column: 4; margin-top: 30px; }
 .bag:hover {
   transform: scale(1.15);
 }
@@ -115,7 +113,6 @@ body {
 .hidden {
   display: none !important;
 }
-
 #final-message {
   position: fixed;
   left: 50%;
@@ -161,12 +158,20 @@ body {
   from { text-shadow: 0 0 18px gold; }
   to { text-shadow: 0 0 38px gold; }
 }
+/* BIỂU TƯỢNG CUNG PHỦ KHẮP, LUÔN DƯỚI HỘP QUÀ */
+#cancer-container {
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
 .cancer {
   position: absolute;
-  width: 100px;
-  opacity: 0.9;
+  width: 60px;
+  opacity: 0.6;
   z-index: 1;
   animation: float 6s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px #ff8);
 }
 @keyframes float {
   0%   { transform: translateY(0); opacity: 0.5; }
@@ -174,17 +179,14 @@ body {
   100% { transform: translateY(0); opacity: 0.5; }
 }
 @media (max-width: 900px) {
-  .bag-row-top {
-    gap: 6vw;
-    margin-bottom: -22px;
-  }
-  .bag-row-bottom {
-    gap: 13vw;
+  .bag-container {
+    gap: 0 3vw;
+    min-height: 260px;
   }
   .bag {
-    width: 22vw;
-    min-width: 70px;
-    max-width: 110px;
+    width: 19vw;
+    min-width: 56px;
+    max-width: 90px;
   }
   #final-message {
     font-size: 1.1em !important;
@@ -199,7 +201,7 @@ body {
     padding: 20px 8px;
   }
   #popup img, .popup img, #rewardImage {
-    width: 56vw;
+    width: 48vw;
     max-width: 96vw;
   }
 }
