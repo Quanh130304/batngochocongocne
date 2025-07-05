@@ -13,12 +13,13 @@ function startGame() {
     firework.play();
   }
 
-  // Biểu tượng cung phủ khắp màn hình, nhiều hơn
+  // Biểu tượng cung phủ khắp màn hình, TO VÀ NHIỀU!
   const container = document.getElementById("cancer-container");
   container.classList.remove("hidden");
   container.innerHTML = ""; // clear lần trước nếu có
-  const num = Math.floor(window.innerWidth * window.innerHeight / 1800);
-  for (let i = 0; i < Math.max(90, num); i++) {
+  // Cho nhiều biểu tượng hơn hẳn, và to
+  const num = Math.floor(window.innerWidth * window.innerHeight / 1100);
+  for (let i = 0; i < Math.max(45, num); i++) {
     const img = document.createElement("img");
     img.src = "cancer-symbol.png";
     img.className = "cancer";
