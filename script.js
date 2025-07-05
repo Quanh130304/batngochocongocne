@@ -3,22 +3,19 @@ let hasOpened = false;
 function startGame() {
   // Ẩn màn hình intro khi người dùng nhấn nút
   document.getElementById("intro").style.display = "none";
-  
   // Hiển thị màn hình game
   document.getElementById("game").classList.remove("hidden");
 
   // Phát nhạc nền và hiệu ứng pháo bông
   const bgMusic = document.getElementById("bg-music");
   const firework = document.getElementById("firework");
-
   bgMusic.play();
-  firework.volume = 1.0; // 🔊 Tăng âm lượng của pháo bông lên tối đa
+  firework.volume = 1.0;
   firework.play();
 
   // Hiển thị biểu tượng cung (cancer symbol)
   const container = document.getElementById("cancer-container");
   container.classList.remove("hidden");
-  
   // Tạo nhiều biểu tượng cung
   for (let i = 0; i < 20; i++) { 
     const img = document.createElement("img");
@@ -30,6 +27,7 @@ function startGame() {
     container.appendChild(img);
   }
 }
+
 function openBag(el) {
   if (hasOpened) return;
   hasOpened = true;
@@ -40,9 +38,10 @@ function openBag(el) {
   const rewardImage = document.getElementById("rewardImage");
   const giftMusic = document.getElementById("gift-music");
 
+  // Random ảnh thưởng
   const random = Math.random() > 0.5 ? "Dress1.jpg" : "Dress2.jpg";
   rewardImage.src = random;
-  rewardImage.style.display = "block"; // đảm bảo hiện ảnh
+  rewardImage.style.display = "block";
 
   popup.classList.remove("hidden");
   giftMusic.play();
@@ -51,6 +50,9 @@ function openBag(el) {
     popup.classList.add("hidden");
     document.querySelector(".bag-container").style.display = "none";
     document.getElementById("title").style.display = "none";
-    document.getElementById("final-message").classList.remove("hidden");
-  }, 1200); // tăng thời gian popup để kịp xem ảnh
+    // Hiện dòng chữ cuối cùng, dùng class show để hiện flex (CSS)
+    const finalMsg = document.getElementById("final-message");
+    finalMsg.classList.remove("hidden");
+    finalMsg.classList.add("show");
+  }, 1200);
 }
