@@ -38,7 +38,7 @@ body {
   font-weight: bold;
 }
 
-/* Bag layout: 3 trên, 2 dưới ở giữa, cách đều */
+/* Bag layout: 3 trên, 2 dưới giữa, luôn cách nhau */
 .bag-container {
   margin-top: 40px;
   display: flex;
@@ -51,21 +51,24 @@ body {
 .bag-row {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   width: 100%;
 }
 .bag-row-top {
-  gap: 70px;
-  margin-bottom: -70px;
+  gap: 100px;
+  margin-bottom: -64px;
 }
 .bag-row-bottom {
-  gap: 220px;
+  gap: 250px;
 }
 .bag {
-  width: 240px;
-  max-width: 17vw;
+  width: 220px;
+  max-width: 15vw;
+  min-width: 120px;
   transition: transform 0.3s;
   z-index: 3;
   cursor: pointer;
+  margin: 0 0; /* không margin, đã có gap */
   background: none;
 }
 .bag:hover {
@@ -172,16 +175,16 @@ body {
 }
 @media (max-width: 900px) {
   .bag-row-top {
-    gap: 14vw;
-    margin-bottom: -32px;
+    gap: 6vw;
+    margin-bottom: -22px;
   }
   .bag-row-bottom {
-    gap: 17vw;
+    gap: 13vw;
   }
   .bag {
     width: 22vw;
     min-width: 70px;
-    max-width: 120px;
+    max-width: 110px;
   }
   #final-message {
     font-size: 1.1em !important;
