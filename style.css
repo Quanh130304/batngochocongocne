@@ -1,8 +1,13 @@
-body {
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden !important; /* XÓA thanh cuộn ngang */
   margin: 0;
+  padding: 0;
+}
+body {
   font-family: 'Segoe UI', sans-serif;
   background-color: black;
-  overflow: hidden;
   color: white;
   text-align: center;
   position: relative;
@@ -47,7 +52,7 @@ body {
   gap: 58px;
   width: 100vw;
   max-width: 100vw;
-  overflow-x: auto;
+  overflow-x: hidden; /* XÓA thanh cuộn ngang */
   flex-wrap: nowrap;
   z-index: 2;
   position: relative;
