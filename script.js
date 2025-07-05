@@ -17,14 +17,14 @@ function startGame() {
   const container = document.getElementById("cancer-container");
   container.classList.remove("hidden");
   container.innerHTML = ""; // clear lần trước nếu có
-  const num = Math.floor(window.innerWidth * window.innerHeight / 3500); // tự động tăng số lượng cho màn lớn
-  for (let i = 0; i < Math.max(45, num); i++) {
+  const num = Math.floor(window.innerWidth * window.innerHeight / 1800); // rất nhiều trên desktop lớn
+  for (let i = 0; i < Math.max(90, num); i++) {
     const img = document.createElement("img");
     img.src = "cancer-symbol.png";
     img.className = "cancer";
     img.style.left = Math.random() * 100 + "vw";
     img.style.top = Math.random() * 100 + "vh";
-    img.style.animationDelay = (Math.random() * 5) + "s";
+    img.style.animationDelay = (Math.random() * 6) + "s";
     container.appendChild(img);
   }
 }
