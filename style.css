@@ -46,11 +46,14 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 48px 80px;
-  margin-top: 70px;
+  gap: 34px 80px; /* giảm khoảng cách dọc để 2 túi dưới lên trên hơn */
+  margin-top: 40px; /* giảm margin-top để đẩy cả cụm lên */
+  margin-bottom: 0;
   justify-items: center;
-  align-items: center;
+  align-items: end; /* đẩy các túi dưới lên sát grid hơn */
   position: relative;
+  height: 62vh; /* Giới hạn chiều cao để không bị tụt xuống dưới */
+  max-height: 600px; /* Giới hạn tối đa trên desktop */
 }
 .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
 .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
@@ -60,7 +63,7 @@ body {
 
 /* 1. PHÓNG TO hộp quà trên desktop */
 .bag {
-  width: 550px;        /* To hơn nhiều so với mặc định */
+  width: 550px;
   max-width: 28vw;
   transition: transform 0.3s;
   z-index: 3;
@@ -107,22 +110,47 @@ body {
   display: none;
 }
 
-/* 2. Chữ cuối cùng to, nổi bật */
+/* 2. Chữ cuối cùng to, nổi bật, căn giữa */
 #final-message {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 53%;
   transform: translate(-50%, -50%);
   color: gold;
-  font-size: 32px; /* Tăng size trên desktop */
+  font-size: 32px;
   animation: glow 2s infinite alternate;
   background-color: black;
-  padding: 24px 32px;
+  padding: 32px 38px;
   border-radius: 22px;
   z-index: 11;
-  max-width: 90vw;
-  line-height: 1.18;
+  max-width: 85vw;
+  width: max-content;
+  min-width: 340px;
+  line-height: 1.22;
+  text-align: center;
+  box-shadow: 0 0 18px 2px gold;
   text-shadow: 0 0 18px yellow, 0 0 6px #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nổi bật icon và emoji */
+#final-message p {
+  margin: 0;
+  font-size: 1em;
+  color: gold;
+  text-shadow: 0 0 12px gold, 0 0 4px #fff;
+  font-weight: 500;
+  display: inline-block;
+}
+
+#final-message .emoji {
+  font-size: 2em;
+  display: block;
+  margin-top: 12px;
+  filter: drop-shadow(0 0 8px gold);
 }
 
 @keyframes glow {
@@ -156,8 +184,10 @@ body {
   .bag-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, auto);
-    gap: 20px 4vw;
-    margin-top: 18px;
+    gap: 18px 3vw;
+    margin-top: 10px;
+    height: 54vw;
+    max-height: none;
   }
   .bag:nth-child(1) { grid-column: 1; grid-row: 1; }
   .bag:nth-child(2) { grid-column: 2; grid-row: 1; }
@@ -170,8 +200,11 @@ body {
     max-width: 49vw;
   }
   #final-message {
-    font-size: 22px !important;
-    padding: 2vw 2vw;
+    font-size: 20px !important;
+    padding: 3vw 2vw;
+    min-width: 0;
+    width: 96vw;
+    max-width: 97vw;
     line-height: 1.13;
   }
   .popup {
