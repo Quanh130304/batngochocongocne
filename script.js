@@ -17,7 +17,7 @@ function startGame() {
   const container = document.getElementById("cancer-container");
   container.classList.remove("hidden");
   container.innerHTML = ""; // clear lần trước nếu có
-  const num = Math.floor(window.innerWidth * window.innerHeight / 1800); // rất nhiều trên desktop lớn
+  const num = Math.floor(window.innerWidth * window.innerHeight / 1800);
   for (let i = 0; i < Math.max(90, num); i++) {
     const img = document.createElement("img");
     img.src = "cancer-symbol.png";
