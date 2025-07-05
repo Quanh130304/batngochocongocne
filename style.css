@@ -31,7 +31,7 @@ body {
   100% { transform: scale(1); }
 }
 #title {
-  font-size: 3.4em;
+  font-size: 3.6em;
   margin-top: 30px;
   text-shadow: 0 0 32px gold;
   z-index: 3;
@@ -39,39 +39,40 @@ body {
   font-weight: bold;
 }
 
+/* Bag layout: 3 trên, 2 dưới giữa, to và không đụng nhau */
 .bag-container {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, min-content);
-  gap: 0px 100px; /* dọc, ngang */
+  grid-template-columns: 1fr 340px 340px 340px 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0 60px; /* dọc, ngang */
   justify-content: center;
   align-items: end;
   width: 100vw;
-  max-width: 1400px;
-  min-height: 500px;
+  max-width: 1700px;
+  min-height: 600px;
   position: relative;
   z-index: 2;
 }
 .bag {
-  width: 190px;
-  max-width: 15vw;
-  min-width: 100px;
+  width: 340px;
+  max-width: 95vw;
+  min-width: 180px;
   transition: transform 0.3s;
   z-index: 3;
   cursor: pointer;
   margin: 0;
   background: none;
-  grid-row: 1;
 }
-.bag1 { grid-column: 1; }
-.bag2 { grid-column: 2; }
-.bag3 { grid-column: 3; }
-.bag4 { grid-row: 2; grid-column: 2; margin-top: 30px; }
-.bag5 { grid-row: 2; grid-column: 4; margin-top: 30px; }
 .bag:hover {
   transform: scale(1.15);
 }
+/* Đặt vị trí grid: 3 trên, 2 dưới giữa */
+.bag1 { grid-row: 1; grid-column: 2;}
+.bag2 { grid-row: 1; grid-column: 3;}
+.bag3 { grid-row: 1; grid-column: 4;}
+.bag4 { grid-row: 2; grid-column: 2;}
+.bag5 { grid-row: 2; grid-column: 4;}
 
 /* Popup phần thưởng */
 .popup {
@@ -102,7 +103,7 @@ body {
   }
 }
 #popup img, .popup img, #rewardImage {
-  width: 300px;
+  width: 330px;
   max-width: 90vw;
   border-radius: 18px;
   margin-bottom: 24px;
@@ -113,6 +114,7 @@ body {
 .hidden {
   display: none !important;
 }
+
 #final-message {
   position: fixed;
   left: 50%;
@@ -178,15 +180,28 @@ body {
   50%  { transform: translateY(-60px); opacity: 1; }
   100% { transform: translateY(0); opacity: 0.5; }
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .bag-container {
+    grid-template-columns: 1fr 30vw 30vw 30vw 1fr;
     gap: 0 3vw;
     min-height: 260px;
   }
   .bag {
-    width: 19vw;
-    min-width: 56px;
-    max-width: 90px;
+    width: 30vw;
+    min-width: 70px;
+    max-width: 200px;
+  }
+}
+@media (max-width: 700px) {
+  .bag-container {
+    grid-template-columns: 1fr 42vw 42vw 42vw 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0 2vw;
+  }
+  .bag {
+    width: 42vw;
+    min-width: 40vw;
+    max-width: 44vw;
   }
   #final-message {
     font-size: 1.1em !important;
