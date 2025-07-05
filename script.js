@@ -13,19 +13,19 @@ function startGame() {
     firework.play();
   }
 
-  // Biểu tượng cung
+  // Biểu tượng cung phủ khắp màn hình, nhiều hơn
   const container = document.getElementById("cancer-container");
   container.classList.remove("hidden");
-  if (!container.hasChildNodes()) {
-    for (let i = 0; i < 20; i++) { 
-      const img = document.createElement("img");
-      img.src = "cancer-symbol.png";
-      img.className = "cancer";
-      img.style.left = Math.random() * 100 + "%";
-      img.style.top = (30 + Math.random() * 50) + "%";
-      img.style.animationDelay = (Math.random() * 4) + "s";
-      container.appendChild(img);
-    }
+  container.innerHTML = ""; // clear lần trước nếu có
+  const num = Math.floor(window.innerWidth * window.innerHeight / 3500); // tự động tăng số lượng cho màn lớn
+  for (let i = 0; i < Math.max(45, num); i++) {
+    const img = document.createElement("img");
+    img.src = "cancer-symbol.png";
+    img.className = "cancer";
+    img.style.left = Math.random() * 100 + "vw";
+    img.style.top = Math.random() * 100 + "vh";
+    img.style.animationDelay = (Math.random() * 5) + "s";
+    container.appendChild(img);
   }
 }
 
