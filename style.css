@@ -38,42 +38,43 @@ body {
   font-weight: bold;
 }
 
-/* BAG LAYOUT: 3 trên, 2 dưới ở giữa */
+/* Bag layout: 3 trên, 2 dưới ở giữa, cách đều */
 .bag-container {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 38px;
   width: 100vw;
   max-width: 1400px;
+  min-height: 500px;
+}
+.bag-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .bag-row-top {
-  display: flex;
-  gap: 6vw;
-  justify-content: center;
-  margin-bottom: -90px; /* Đẩy hàng dưới lên gần hơn */
-  z-index: 2;
+  gap: 70px;
+  margin-bottom: -70px;
 }
 .bag-row-bottom {
-  display: flex;
-  gap: 21vw;
-  justify-content: center;
-  z-index: 2;
+  gap: 220px;
 }
 .bag {
-  width: 320px;
-  max-width: 19vw;
+  width: 240px;
+  max-width: 17vw;
   transition: transform 0.3s;
   z-index: 3;
   cursor: pointer;
+  background: none;
 }
 .bag:hover {
-  transform: scale(1.18);
+  transform: scale(1.15);
 }
 
-/* Popup phần thưởng TO */
+/* Popup phần thưởng */
 .popup {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -84,7 +85,7 @@ body {
   font-size: 34px;
   box-shadow: 0 0 50px 20px yellow;
   animation: popupIn 0.3s ease-out;
-  z-index: 10;
+  z-index: 100;
   max-width: 96vw;
   min-width: 320px;
   width: fit-content;
@@ -100,8 +101,8 @@ body {
   }
 }
 #popup img, .popup img, #rewardImage {
-  width: 400px;
-  max-width: 92vw;
+  width: 300px;
+  max-width: 90vw;
   border-radius: 18px;
   margin-bottom: 24px;
   display: block;
@@ -112,21 +113,20 @@ body {
   display: none !important;
 }
 
-/* Dòng chữ cuối cùng TO, vàng, căn giữa */
 #final-message {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  top: 56%;
+  top: 55%;
   transform: translate(-50%, -50%);
   color: gold;
-  font-size: 3.2em;
+  font-size: 2.2em;
   animation: glow 2s infinite alternate;
   background-color: rgba(0,0,0,0.98);
-  padding: 44px 70px 32px 70px;
-  border-radius: 44px;
-  z-index: 15;
+  padding: 32px 30px 22px 30px;
+  border-radius: 34px;
+  z-index: 200;
   width: max-content;
-  min-width: 640px;
+  min-width: 340px;
   max-width: 96vw;
   text-align: center;
   font-weight: bold;
@@ -170,24 +170,22 @@ body {
   50%  { transform: translateY(-60px); opacity: 1; }
   100% { transform: translateY(0); opacity: 0.5; }
 }
-
-/* Responsive cho màn hình nhỏ */
-@media (max-width: 980px) {
+@media (max-width: 900px) {
   .bag-row-top {
-    gap: 4vw;
-    margin-bottom: -40px;
+    gap: 14vw;
+    margin-bottom: -32px;
   }
   .bag-row-bottom {
-    gap: 10vw;
+    gap: 17vw;
   }
   .bag {
-    width: 24vw;
-    max-width: 110px;
-    min-width: 60px;
+    width: 22vw;
+    min-width: 70px;
+    max-width: 120px;
   }
   #final-message {
-    font-size: 1.5em !important;
-    padding: 6vw 2vw 3vw 2vw;
+    font-size: 1.1em !important;
+    padding: 4vw 2vw 3vw 2vw;
     min-width: 0;
     width: 97vw;
     max-width: 99vw;
@@ -198,7 +196,7 @@ body {
     padding: 20px 8px;
   }
   #popup img, .popup img, #rewardImage {
-    width: 52vw;
+    width: 56vw;
     max-width: 96vw;
   }
 }
